@@ -183,7 +183,7 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>280</x>
        <y>660</y>
        <width>221</width>
        <height>41</height>
@@ -1243,6 +1243,9 @@
       <property name="text">
        <string/>
       </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
       <property name="textInteractionFlags">
        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
       </property>
@@ -2062,22 +2065,6 @@
       </property>
      </widget>
     </widget>
-    <widget class="QCommandLinkButton" name="save_to_remote">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>480</x>
-       <y>660</y>
-       <width>221</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Save Remote Settings</string>
-     </property>
-    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -2095,9 +2082,9 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_remote"/>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_4"/>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_remote"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>

@@ -61,7 +61,7 @@ class Ui_MainWindow(object):
         self.reset_to_defaults.setObjectName("reset_to_defaults")
         self.copy_req_to_remote = QtWidgets.QCommandLinkButton(self.settings)
         self.copy_req_to_remote.setEnabled(False)
-        self.copy_req_to_remote.setGeometry(QtCore.QRect(90, 660, 221, 41))
+        self.copy_req_to_remote.setGeometry(QtCore.QRect(280, 660, 221, 41))
         self.copy_req_to_remote.setObjectName("copy_req_to_remote")
         self.local = QtWidgets.QFrame(self.settings)
         self.local.setEnabled(False)
@@ -359,6 +359,7 @@ class Ui_MainWindow(object):
         self.rssi_remote.setGeometry(QtCore.QRect(50, 60, 241, 31))
         self.rssi_remote.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.rssi_remote.setText("")
+        self.rssi_remote.setWordWrap(True)
         self.rssi_remote.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse|QtCore.Qt.TextSelectableByMouse)
         self.rssi_remote.setObjectName("rssi_remote")
         self.rssi_label_remote = QtWidgets.QLabel(self.remote)
@@ -586,10 +587,6 @@ class Ui_MainWindow(object):
         self.label_2.setFont(font)
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
-        self.save_to_remote = QtWidgets.QCommandLinkButton(self.settings)
-        self.save_to_remote.setEnabled(False)
-        self.save_to_remote.setGeometry(QtCore.QRect(480, 660, 221, 41))
-        self.save_to_remote.setObjectName("save_to_remote")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 811, 21))
@@ -682,7 +679,6 @@ class Ui_MainWindow(object):
         self.target_rssi_label_remote.setText(_translate("MainWindow", "Target RSSI"))
         self.hysteresis_rssi_label_remote.setText(_translate("MainWindow", "Hysteresis RSSI"))
         self.label_2.setText(_translate("MainWindow", "Remote Modem"))
-        self.save_to_remote.setText(_translate("MainWindow", "Save Remote Settings"))
 
 
 
