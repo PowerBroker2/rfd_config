@@ -1,0 +1,1 @@
+pyinstaller -F rfd_config.spec
