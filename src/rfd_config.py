@@ -203,11 +203,84 @@ class AppWindow(QMainWindow):
                     if self.ui.ant_mode.isEnabled():
                         self.rfd.params['ANT_MODE']['desVal'] = self.ui.ant_mode.currentIndex()
                         self.rfd.writeOutParam('ANT_MODE')
+                    
+                    self.rfd.save()
+                        
+                        
+                if self.ui.remote.isEnabled():
+                    if self.ui.baud_setting_remote.isEnabled():
+                        self.rfd.params['SERIAL_SPEED']['desValRemote'] = rfd900x.SERIAL_SPEEDS[self.ui.baud_setting_remote.currentIndex()]
+                        self.rfd.writeOutParam('SERIAL_SPEED', False)
+                    
+                    if self.ui.air_speed_remote.isEnabled():
+                        self.rfd.params['AIR_SPEED']['desValRemote'] = int(self.ui.air_speed_remote.currentText())
+                        self.rfd.writeOutParam('AIR_SPEED', False)
+                    
+                    if self.ui.net_id_remote.isEnabled():
+                        self.rfd.params['NETID']['desValRemote'] = int(self.ui.net_id_remote.currentText())
+                        self.rfd.writeOutParam('NETID', False)
+                    
+                    if self.ui.tx_pwr_remote.isEnabled():
+                        self.rfd.params['TXPOWER']['desValRemote'] = int(self.ui.tx_pwr_remote.currentText())
+                        self.rfd.writeOutParam('TXPOWER', False)
+                    
+                    if self.ui.ecc_remote.isEnabled():
+                        self.rfd.params['ECC']['desValRemote'] = int(self.ui.ecc_remote.isChecked())
+                        self.rfd.writeOutParam('ECC', False)
+                    
+                    if self.ui.mavlink_remote.isEnabled():
+                        self.rfd.params['MAVLINK']['desValRemote'] = self.ui.mavlink_remote.currentIndex()
+                        self.rfd.writeOutParam('MAVLINK', False)
+                    
+                    if self.ui.op_resend_remote.isEnabled():
+                        self.rfd.params['OPPRESEND']['desValRemote'] = int(self.ui.op_resend_remote.isChecked())
+                        self.rfd.writeOutParam('OPPRESEND', False)
+                    
+                    if self.ui.min_freq_remote.isEnabled():
+                        self.rfd.params['MIN_FREQ']['desValRemote'] = int(self.ui.min_freq_remote.currentText())
+                        self.rfd.writeOutParam('MIN_FREQ', False)
+                    
+                    if self.ui.max_freq_remote.isEnabled():
+                        self.rfd.params['MAX_FREQ']['desValRemote'] = int(self.ui.max_freq_remote.currentText())
+                        self.rfd.writeOutParam('MAX_FREQ', False)
+                    
+                    if self.ui.num_channels_remote.isEnabled():
+                        self.rfd.params['NUM_CHANNELS']['desValRemote'] = int(self.ui.num_channels_remote.currentText())
+                        self.rfd.writeOutParam('NUM_CHANNELS', False)
+                    
+                    if self.ui.duty_cycle_remote.isEnabled():
+                        self.rfd.params['DUTY_CYCLE']['desValRemote'] = int(self.ui.duty_cycle_remote.currentText())
+                        self.rfd.writeOutParam('DUTY_CYCLE', False)
+                    
+                    if self.ui.lbt_rssi_remote.isEnabled():
+                        self.rfd.params['LBT_RSSI']['desValRemote'] = int(self.ui.lbt_rssi_remote.currentText())
+                        self.rfd.writeOutParam('LBT_RSSI', False)
+                    
+                    if self.ui.flow_control_remote.isEnabled():
+                        self.rfd.params['RTSCTS']['desValRemote'] = int(self.ui.flow_control_remote.isChecked())
+                        self.rfd.writeOutParam('RTSCTS', False)
+                    
+                    if self.ui.max_window_remote.isEnabled():
+                        self.rfd.params['MAX_WINDOW']['desValRemote'] = int(self.ui.max_window_remote.currentText())
+                        self.rfd.writeOutParam('MAX_WINDOW', False)
+                    
+                    if self.ui.aes_encrypt_remote.isEnabled():
+                        self.rfd.params['ENCRYPTION_LEVEL']['desValRemote'] = int(self.ui.aes_encrypt_remote.isChecked())
+                        self.rfd.writeOutParam('ENCRYPTION_LEVEL', False)
+                    
+                    if self.ui.aes_key_remote.isEnabled():
+                        self.rfd.params['EncryptionKey']['desValRemote'] = self.ui.aes_key_remote.text()
+                        self.rfd.writeOutParam('EncryptionKey', False)
+                    
+                    if self.ui.ant_mode_remote.isEnabled():
+                        self.rfd.params['ANT_MODE']['desValRemote'] = self.ui.ant_mode_remote.currentIndex()
+                        self.rfd.writeOutParam('ANT_MODE', False)
+                    
+                    self.rfd.save(False)
         except:
             import traceback
             traceback.print_exc()
-        
-        self.rfd.save()
+            
         self.rfd.close()
     
     def reset_to_defaults(self):
